@@ -1,0 +1,23 @@
+schema:
+  messages:
+    - "Hello"
+    - "Hi"
+    - "Hey"
+    - "Good Morning"
+    - "Good Afternoon"
+    - "Good Evening"
+    - "早上好"
+    - "下午好"
+    - "晚上好"
+    - "Bonjour"
+    - "Salut"
+    - "Bonsoir"
+    - "Bonne nuit"
+    - "Bonne journée"
+    - "Bonne après-midi"
+    - "Bonne soirée"
+
+generator:
+  frequency: 1
+  destination:
+    type: "console"
