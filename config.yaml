@@ -1,23 +1,27 @@
 schema:
-  messages:
-    - "Hello"
-    - "Hi"
-    - "Hey"
-    - "Good Morning"
-    - "Good Afternoon"
-    - "Good Evening"
-    - "早上好"
-    - "下午好"
-    - "晚上好"
-    - "Bonjour"
-    - "Salut"
-    - "Bonsoir"
-    - "Bonne nuit"
-    - "Bonne journée"
-    - "Bonne après-midi"
-    - "Bonne soirée"
+  order_id:
+    type: integer
+    min: 1000
+    max: 9999
+  symbol:
+    type: string
+    values: ["AAPL", "GOOGL", "MSFT", "TSLA"]
+  order_type:
+    type: string
+    values: ["market", "limit", "stop"]
+  quantity:
+    type: integer
+    min: 1
+    max: 100
+  price:
+    type: float
+    min: 100.0
+    max: 1500.0
+  timestamp:
+    type: datetime
+    format: "%Y-%m-%d %H:%M:%S"
 
 generator:
   frequency: 1
   destination:
-    type: "console"
+    type: console

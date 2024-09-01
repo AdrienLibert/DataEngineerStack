@@ -1,7 +1,7 @@
 import yaml
 from SchemaBuilder import SchemaBuilder
 
-# Initialize SchemaLoader with the schema definition (a dictionary)
+# Draft
 class SchemaLoader:
     def __init__(self, schema_definition):
         self.schema = schema_definition
