@@ -24,4 +24,6 @@ schema:
 generator:
   frequency: 1
   destination:
-    type: console
+    type: kafka
+    kafka_bootstrap_servers: "localhost:9092"
+    topic: "orders"

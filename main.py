@@ -1,11 +1,7 @@
 import time
-import json
-import random
-import yaml
 from ConfigLoader import ConfigLoader
 from SchemaBuilder import SchemaBuilder
 from MessageGenerator import MessageGenerator
-from SchemaLoader import SchemaLoader
 
 def main():
     config_loader = ConfigLoader("config.yaml")
