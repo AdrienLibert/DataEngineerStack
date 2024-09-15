@@ -1,11 +1,11 @@
-DOCKER_COMPOSE_FILE=docker-compose.yaml
+DOCKER_COMPOSE_FILE=kafka/docker-compose.yaml
 
 build:
 	docker-compose -f $(DOCKER_COMPOSE_FILE) up --build -d
-	python main.py
+	python faker/main.py
 
 run:
-	python read_streaming.py
+	python etl/read_streaming.py
 
 down:
 	docker-compose -f $(DOCKER_COMPOSE_FILE) down

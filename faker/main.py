@@ -4,7 +4,7 @@ from SchemaBuilder import SchemaBuilder
 from MessageGenerator import MessageGenerator
 
 def main():
-    config_loader = ConfigLoader("config.yaml")
+    config_loader = ConfigLoader("faker/config.yaml")
     schema_definition = config_loader.get_schema_definition()
     schema_builder = SchemaBuilder(schema_definition)
     
