@@ -11,7 +11,7 @@ class MessageGenerator:
         
         if self.destination_type == "kafka": #Initialisation
             self.kafka_producer = Producer({
-                'bootstrap.servers': 'kafka:9092'
+                'bootstrap.servers': 'localhost:9092'
             })
 
             self.kafka_topic = generator_definition.get("destination", {}).get("topic", "default_topic")  #destination

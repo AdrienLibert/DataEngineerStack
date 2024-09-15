@@ -6,7 +6,7 @@ build:
 	docker build -t $(IMAGE_NAME) .
 	docker-compose -f $(DOCKER_COMPOSE_FILE) up --build
 
-run:
+run
 	docker network create kafka-net
 	docker network connect kafka-net kafka
 	docker run --network kafka-net -e KAFKA_BOOTSTRAP_SERVERS=kafka:9092 $(IMAGE_NAME)
