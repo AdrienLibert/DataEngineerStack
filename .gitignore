@@ -1,10 +1,8 @@
 # Python environment variables and virtual environments
-venv/
-env/
-ENV/
 .venv/
-.pyvenv/
 
 parquet_output/
 
 checkpoint/
+
+__pycache__
