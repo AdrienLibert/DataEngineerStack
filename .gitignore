@@ -6,3 +6,5 @@ parquet_output/
 checkpoint/
 
 __pycache__
+
+kafka_pyspark_lib.egg-info
