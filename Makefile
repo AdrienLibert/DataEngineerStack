@@ -1,24 +1,19 @@
-IMAGE_NAME=mon-generator
 DOCKER_COMPOSE_FILE=docker-compose.yaml
-CONTAINER_ID=$(shell docker ps -qf "ancestor=$(IMAGE_NAME)")
 
 build:
-	docker build -t $(IMAGE_NAME) .
-	docker-compose -f $(DOCKER_COMPOSE_FILE) up --build
+	docker-compose -f $(DOCKER_COMPOSE_FILE) up --build -d
+	python main.py
 
-run
-	docker network create kafka-net
-	docker network connect kafka-net kafka
-	docker run --network kafka-net -e KAFKA_BOOTSTRAP_SERVERS=kafka:9092 $(IMAGE_NAME)
+run:
+	python read_streaming.py
 
 down:
-	docker stop $(CONTAINER_ID)
-	docker rm $(CONTAINER_ID)
 	docker-compose -f $(DOCKER_COMPOSE_FILE) down
-	docker network rm kafka-net
-
 ps:
 	docker ps
 
 network:
 	docker network ls
+
+read:
+	python read_parquet.py
