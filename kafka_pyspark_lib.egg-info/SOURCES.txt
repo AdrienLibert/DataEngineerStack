@@ -1,7 +1,0 @@
-README.md
-setup.py
-kafka_pyspark_lib.egg-info/PKG-INFO
-kafka_pyspark_lib.egg-info/SOURCES.txt
-kafka_pyspark_lib.egg-info/dependency_links.txt
-kafka_pyspark_lib.egg-info/requires.txt
-kafka_pyspark_lib.egg-info/top_level.txt
