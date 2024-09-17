@@ -5,6 +5,6 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'pyspark==3.5.2'
+        'pyspark==3.2.4'
     ],
 )
