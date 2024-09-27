@@ -43,6 +43,14 @@ def write_to_parquet(df, output_path, checkpoint_path):
         .option("checkpointLocation", checkpoint_path) \
         .start()
 
+# Write results to console
+def write_to_console(df):
+    return df.writeStream \
+        .outputMode("append") \
+        .format("console") \
+        .option("truncate", "false") \
+        .start()
+
 # Read from Parquet files
 def read_from_parquet(spark, input_path):
     return spark.read.parquet(input_path)

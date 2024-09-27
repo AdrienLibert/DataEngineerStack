@@ -2,7 +2,6 @@ services:
   kafka:
     image: docker.io/bitnami/kafka:3.8
     container_name: kafka
-    network_mode: "host"
     ports:
       - "9092:9092"
       - "9093:9093"
@@ -24,7 +23,7 @@ services:
 
   faker:
     build:
-      context: ..
+      context: .
       dockerfile: faker/Dockerfile.faker
     container_name: faker_service
     network_mode: "host"
@@ -33,9 +32,9 @@ services:
 
   etl:
     build:
-      context: ..
+      context: .
       dockerfile: etl/Dockerfile.etl
-    container_name: etl_job
+    container_name: etl_service
     network_mode: "host"
     depends_on:
       - kafka
