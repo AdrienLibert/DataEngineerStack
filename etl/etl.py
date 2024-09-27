@@ -22,6 +22,8 @@ def main():
 
     df_parsed = parse_json(df_kafka, schema)
     df_avg_price = aggregate_avg_price(df_parsed)
+
+    # query = write_to_parquet(df_avg_price, etl_config.output_path, etl_config.checkpoint_path)
     query = write_to_console(df_avg_price)
     query.awaitTermination()
 

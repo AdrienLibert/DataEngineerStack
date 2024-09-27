@@ -18,12 +18,10 @@ RUN python3 -m venv /opt/venv
 
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Copier les répertoires etl et kafka dans le conteneur
 COPY etl /data/etl
 COPY kafka /data/kafka
 
-# Ajouter kafka au PYTHONPATH pour que les modules puissent être trouvés
-ENV PYTHONPATH="/data/kafka"
+ENV PYTHONPATH="/data/kafka:/data/etl"
 
 # Install PySpark & kafka
 RUN pip install pyspark==3.5.2 confluent-kafka
