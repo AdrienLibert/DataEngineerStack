@@ -1,4 +1,3 @@
-
 class KafkaConfig:
     def __init__(self, bootstrap_servers="localhost:9092", topic="orders", starting_offsets="earliest"):
         self.bootstrap_servers = bootstrap_servers

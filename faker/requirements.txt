@@ -2,5 +2,3 @@ confluent-kafka
 pyyaml
 pandas
 numpy
-pyspark==3.2.4
-setuptools
