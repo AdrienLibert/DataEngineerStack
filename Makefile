@@ -1,16 +1,8 @@
-DOCKER_COMPOSE_FILE=kafka/docker-compose.yaml
-
 build:
-	docker-compose -f $(DOCKER_COMPOSE_FILE) up --build -d
-	pip install -r requirements.txt
-	python faker/main.py
-
-run:
-	pip install -e .
-	python etl/etl.py
+	docker-compose up --build
 
 down:
-	docker-compose -f $(DOCKER_COMPOSE_FILE) down
+	docker-compose down
 
 ps:
 	docker ps
