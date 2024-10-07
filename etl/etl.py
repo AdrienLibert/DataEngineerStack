@@ -1,5 +1,5 @@
-from spark_utils import create_spark_session, read_from_kafka, parse_json, aggregate_avg_price, write_to_console
-from config_spark import KafkaConfig, ETLConfig
+from Spark_utils import create_spark_session, read_from_kafka, parse_json, aggregate_avg_price, write_to_console
+from ConfigLoader import KafkaConfig, ETLConfig
 from pyspark.sql.types import StructType, StructField, StringType, FloatType, TimestampType
 
 def main():

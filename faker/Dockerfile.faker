@@ -2,10 +2,16 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY /lib/requirements.txt .
 
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY faker/main.py .
+COPY faker/config.yaml .
+COPY lib/SchemaBuilder.py .
+COPY lib/MessageGenerator.py .
+COPY lib/ConfigLoader.py .
 
-CMD ["python", "/app/faker/main.py"]
+CMD ["python", "main.py"]
+
+#CMD ["ls", "-la"]

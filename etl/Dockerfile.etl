@@ -19,12 +19,12 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 COPY etl /data/etl
-COPY kafka/spark_utils.py /data/etl/
-COPY kafka/config_spark.py /data/etl/
+COPY lib/Spark_utils.py /data/etl/
+COPY lib/ConfigLoader.py /data/etl/
 
 ENV PYTHONPATH="/data/etl"
 # Install PySpark & kafka
-RUN pip install pyspark==3.5.2 confluent-kafka
+RUN pip install pyspark==3.5.2 confluent-kafka pyyaml
 
 
 # Define default command
